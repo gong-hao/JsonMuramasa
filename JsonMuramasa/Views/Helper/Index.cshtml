@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Json Muramasa</title>
+    <link href="/Content/foundation/foundation.css" rel="stylesheet" />
+    <link href="/Content/JsonMuramasa.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="/">Json Muramasa Helper</a></h1>
+            </li>
+        </ul>
+    </nav>
+
+    <br />
+
+    <div class="row fullWidth" ng-controller="textToJsonCtrl">
+
+        <div class="small-6 medium-6 large-6 column">
+            <textarea rows="45" ng-model="TextInputEditor"></textarea>
+        </div>
+
+        <div class="small-6 medium-6 large-6 column">
+            <textarea rows="45" ng-model="JsonResultEditor"></textarea>
+        </div>
+
+        <input type="checkbox" ng-model="IsClearEmpty" />清除空字串
+        
+        <br />
+
+        <button class="tiny" ng-click="AxisSwap()">Axis Swap</button>
+
+        <input class="action-bar" type="text" ng-model="AxisSwapSp" placeholder="間隔符號" />
+
+        <br />
+
+        <button class="tiny" ng-click="TextToJson()">To JSON</button>
+
+        <input type="checkbox" ng-model="IsAutoColumnName" />Auto Column Name
+
+        <input class="action-bar" type="text" ng-model="SplitPat" placeholder="切割符號" />
+
+        <br />
+
+        <input class="action-bar" type="text" ng-model="KeyWord" placeholder="KeyWord" />
+
+        <input type="checkbox" ng-model="IsEqual" />全等
+
+        <button class="tiny" ng-click="Exclude()">Exclude</button>
+
+        <button class="tiny" ng-click="Pick()">Pick</button>
+        
+        <br />
+        
+        <input class="action-bar" type="text" ng-model="HanSoldierskey" placeholder="group,index" />
+
+        <button class="tiny" ng-click="HanSoldiers()">Han Soldiers</button>
+    </div>
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/modernizr-2.8.3.js"></script>
+    <script src="/Scripts/foundation/foundation.js"></script>
+    <script src="/Scripts/foundation/foundation.topbar.js"></script>
+    <script src="/Scripts/foundation/foundation.offcanvas.js"></script>
+    <script src="/Scripts/jQuery-Plugin-to-Pretty-Print-Minify-Scripts/jquery.format.js"></script>
+    <script src="/Scripts/angular.js"></script>
+    <script src="/App/TextToJson.js"></script>
+</body>
+</html>

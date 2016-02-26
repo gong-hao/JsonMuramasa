@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Json Muramasa</title>
+    <link href="/Content/foundation/foundation.css" rel="stylesheet" />
+    <link href="/Content/JsonMuramasa.css" rel="stylesheet" />
+</head>
+<body ng-controller="mainCtrl">
+
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="/">Json Muramasa</a></h1>
+            </li>
+        </ul>
+
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li><input type="number" ng-model="JsonEditorColumn" /></li>
+                <li><input type="number" ng-model="TemplateEditorColumn" /></li>
+                <li><input type="number" ng-model="ResultEditorColumn" /></li>
+            </ul>
+        </section>
+    </nav>
+
+    <br />
+
+    <div class="row fullWidth">
+        <div class="column">
+            <button class="tiny secondary" ng-click="execute()">
+                Execute
+            </button>
+            <button class="tiny secondary" ng-click="validate()">
+                Validate
+            </button>
+            <button class="tiny secondary" ng-click="pretty()">
+                Pretty
+            </button>
+            <button class="tiny secondary" ng-click="download()">
+                Download
+            </button>
+        </div>
+    </div>
+
+    <div class="row fullWidth">
+        <div class="small-{{JsonEditorColumn}} medium-{{JsonEditorColumn}} large-{{JsonEditorColumn}} column">
+            <textarea rows="45" id="JsonEditor"></textarea>
+        </div>
+        <div class="small-{{TemplateEditorColumn}} medium-{{TemplateEditorColumn}} large-{{TemplateEditorColumn}} column">
+            <textarea rows="45" id="TemplateEditor"></textarea>
+        </div>
+        <div class="small-{{ResultEditorColumn}} medium-{{ResultEditorColumn}} large-{{ResultEditorColumn}} column">
+            <textarea rows="45" id="ResultEditor"></textarea>
+            <div contenteditable="true" class="hide" id="chopping-blocks"><chopping-block></chopping-block></div>
+        </div>
+    </div>
+
+    <div class="row fullWidth">
+        <div class="column">
+            <h3>Inline Method Usage :</h3>
+            <pre>
+if          (predicates, then, otherwise)
+ifNot       (predicates, then, otherwise)
+isFirst     (then, otherwise)
+isNotFirst  (then, otherwise)
+isLast      (then, otherwise)
+isNotLast   (then, otherwise)
+isEven      (then, otherwise)
+isNotEven   (then, otherwise)
+isOdd       (then, otherwise)
+isNotOdd    (then, otherwise)
+isMiddle    (then, otherwise)
+isNotMiddle (then, otherwise)
+copy        (val, times)
+toJson      (val, pretty)
+                </pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <textarea rows="45" id="FuntionEditor"></textarea>
+    </div>
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/modernizr-2.8.3.js"></script>
+    <script src="/Scripts/foundation/foundation.js"></script>
+    <script src="/Scripts/foundation/foundation.topbar.js"></script>
+    <script src="/Scripts/foundation/foundation.offcanvas.js"></script>
+    <script src="/Scripts/jQuery-Plugin-to-Pretty-Print-Minify-Scripts/jquery.format.js"></script>
+    <script src="/Scripts/angular.js"></script>
+    <script src="/App/JsonMuramasa.js"></script>
+</body>
+</html>
